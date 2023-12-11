@@ -1,0 +1,23 @@
+<hr>    
+<p>arara works! arara voandao!</p>
+<div class="descricao">
+    {{getToString()}}
+  
+  </div>
+  <br>
+  <hr>
+  <h2>Arara 2</h2>
+  <img [src]="url2" alt="arara canindé 2">
+  <hr>
+  <h3>ngModel</h3>
+  <input type="text" [(ngModel)]="nome2">
+  <br><br>
+  <!----Event biding-->
+  <button (click) = "onClick()">Clique aqui!</button>
+<br><br>
+  <button (mouseenter)="entrouBotao()" (mouseleave)="saiuBotao()"
+  >Nome do botão</button>
+<br><br>
+<label for="txtEventoParametro">digite um texto: </label>
+<input type="text" (input)="digitandoTexto($event)" id="txtEventoParametro">
+<h1 id="textodigitado">{{txtEventoParametro}} </h1>
