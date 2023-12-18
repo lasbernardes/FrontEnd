@@ -21,3 +21,14 @@
 <label for="txtEventoParametro">digite um texto: </label>
 <input type="text" (input)="digitandoTexto($event)" id="txtEventoParametro">
 <h1 id="textodigitado">{{txtEventoParametro}} </h1>
+<!----->
+<h2> cor da arara :{{cor}}</h2>
+
+<input #novaTarefa type="text">
+<button (click)="addTarefa(novaTarefa.value)">Adiciona Tarefa</button>
+
+<div appAnimacao>
+
+  <h1>aqui</h1>
+</div>
+

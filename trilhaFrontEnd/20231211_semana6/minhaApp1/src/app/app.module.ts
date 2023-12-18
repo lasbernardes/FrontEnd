@@ -6,12 +6,18 @@ import { AppComponent } from './app.component';
 import { TabelaComponent } from './tabela/tabela.component';
 import { AraraComponent } from './arara/arara.component';
 import { FormsModule } from '@angular/forms';
+import { DestaqueDirective } from './destaque.directive';
+import {TresVezesDirective } from './tres-vezes.directive';
+import { AnimacaoDirective } from './animacao.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     TabelaComponent,
-    AraraComponent
+    AraraComponent,
+    DestaqueDirective,
+    TresVezesDirective,
+    AnimacaoDirective
   ],
   imports: [
     BrowserModule,

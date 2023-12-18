@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-arara',
@@ -10,6 +10,7 @@ export class AraraComponent {
   descricao: string = 'A arara canindé';
   url2: string = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Blue-and-Yellow-Macaw.jpg/280px-Blue-and-Yellow-Macaw.jpg";
   nome2: string="Tamanduá";
+ @Input()  cor: string="";
   txtEventoParametro: string = '';
 
   public getToString():string{
@@ -27,5 +28,13 @@ export class AraraComponent {
   public digitandoTexto(event: Event){
     this.txtEventoParametro = (<HTMLInputElement>event.target).value;
     console.log(event);
+  }
+  
+  @Output() tarefaAdicionada = new EventEmitter<string>();
+
+  addTarefa(todo:string){
+    todo = "J -> " + todo;
+    this.tarefaAdicionada.emit(todo);
+
   }
 }
