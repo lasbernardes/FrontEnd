@@ -1,0 +1,36 @@
+<div class="form-container_ex1">
+    <form id="formComum" (ngSubmit)="onSubmit(formulario)" #formulario="ngForm">
+        <div >
+            <label >
+                <input name="login" ngModel required maxlength="4" #login="ngModel">
+                <span *ngIf="!login.valid && login.touched">até 4 digitos!</span>
+            </label>
+            <br>
+            <label>
+                <input name="senha" ngModel required minlength="4" maxlength="10" #senha="ngModel">
+                <span *ngIf="!senha.valid && senha.touched">Entre 4 e 10 digitos!</span>
+            </label>
+            <!--<button type="submit">Enviar</button>-->
+            <button type="submit" [disabled]="formulario.invalid">Enviar</button>
+        </div>
+    </form>
+    <br><hr><br>
+    <form [formGroup]="exemploForm" (ngSubmit)="onsubmeter()">
+      <div >
+          <label >
+              <input formControlName="estacaoClimatica" name="estacaoClimatica">
+                  <div *ngIf="!exemploForm.get('estacaoClimatica')?.errors?.['ecVazio']">
+                    <p>Campo não preenchido!</p>
+                  </div>
+          </label>
+          <br>
+          <label>
+              <input formControlName="email" name="email">
+              <!--<span *ngIf="!senha.valid && senha.touched">Entre 4 e 10 digitos!</span>-->
+          </label>
+          <!--<button type="submit">Enviar</button>-->
+          <button type="submit" >Enviar</button>
+      </div>
+  </form>
+
+</div>
